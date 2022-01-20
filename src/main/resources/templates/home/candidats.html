@@ -19,6 +19,8 @@
         <th>Nom</th>
         <th>Email</th>
         <th>Telephone</th>
+        <th>Détails</th>
+        <th>Supprimer</th>
     </tr>
 
     <tr th:each="c : ${tab}">
@@ -26,6 +28,8 @@
         <td th:text="${c.nom}"></td>
         <td th:text="${c.email}"></td>
         <td th:text="${c.tel}"></td>
+        <td><a th:href="@{/show/{idC}(idC=${c.id})}" class="btn btn-primary">Show</a></td>
+        <td><a th:href="@{/delete/{idC}(idC=${c.id})}" class="btn btn-danger">Supprim</a></td>
     </tr>
     <caption align="bottom">Liste des Candidats</caption>
 </table>

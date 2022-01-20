@@ -60,4 +60,18 @@ class HomeController {
         //return "infos : "+id+" "+nom+" "+email+" "+tel;
         return "redirect:candidats";
     }
+
+    @GetMapping("/show/{idC}")
+    @ResponseBody
+    public String show(@PathVariable("idC") int id){
+        return "ID : "+id;
+        //return"home/show";
+    }
+
+    @GetMapping("/delete/{idC}")
+    public String delete(@PathVariable("idC") int id){
+        lc.remove(id);
+        return "redirect:../candidats";
+        //return"home/show";
+    }
 }
